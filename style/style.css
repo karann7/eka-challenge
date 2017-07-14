@@ -9,6 +9,8 @@
   flex-direction: row;
   padding: 5px;
   background: white;
+  position: fixed;
+  top: 0;
 }
 .buttonBack {
   width: 100%;
@@ -34,17 +36,32 @@ li a {
   padding: 0 20px;
 }
 ul {
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid #949799;
 }
 ul a {
     text-decoration: none !important;
     color: #949799;
 }
 .navcont {
-  width: 600px;
+  width: 800px;
   margin: 0 auto;
   padding: 80px 0;
 }
 .main {
   background-color: #F2F3F5;
+}
+.blackheading {
+  padding-top: 100px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.registerForm {
+  width: 800px;
+}
+.formbody {
+  padding-top: 80px;
+  background-color: white;
+  padding: 40px;
+  width: 600px;
+  margin: 0 auto;
 }

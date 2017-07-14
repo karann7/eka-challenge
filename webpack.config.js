@@ -24,9 +24,12 @@ module.exports = {
       "node_modules"
     ],
 			alias: {
+        App: 'components/App',
         Reducers: 'reducers',
         Banner: 'components/Banner.js',
-        Nav: 'components/Nav'
+        Nav: 'components/Nav',
+        FormInput: 'components/common/FormInput',
+        RegisterForm: 'components/RegisterForm'
     },
     extensions: ['*', '.js', '.jsx']
   },
