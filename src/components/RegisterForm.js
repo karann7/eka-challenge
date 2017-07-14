@@ -1,84 +1,59 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
-import { browserHistory } from 'react-router';
 
 class RegisterForm extends Component {
-  submitform(values){
-    console.log(JSON.stringify(values, null, 2))
+  inputFields({ placeholder, type, name, input }) {
+    return (
+      <div className='form-group'>
+      <div>
+        <input className='form-control'  placeholder={placeholder} type={type} name={name} {...input}/>
+      </div>
+    </div>
+    );
+  }
+  
+  submitform(values) {
+    // do error checking here and call actions
   }
   render() {
     const { submitting, handleSubmit } = this.props;
-    this.props.history.push('/cinfo');
     return (
       <div className={'registerForm'}>
         <h2 className={'blackheading'}>What Will you do with all the time you save?</h2>
         <div className={'formbody'}>
           <form onSubmit={handleSubmit(this.submitform)}>
-            <div className="form-field">
+            <label>Forms marked with * are required</label>
+            <Field component={this.inputFields} type='text' name='carriername' placeholder='Carrier Name'/>
+            <Field component={this.inputFields} type='text' name='firstname' placeholder='First Name'/>
+            <Field component={this.inputFields} type='text' name='lastname' placeholder='Last Name'/>
+            <Field component={this.inputFields} type='email' name='email' placeholder='Email'/>
+            <Field component={this.inputFields} type='password' name='password' placeholder='Password'/>
+            <Field component={this.inputFields} type='password' name='repassword' placeholder='Re-Enter Password'/>
+            <Field component={this.inputFields} type='text' name='passwordhint' placeholder='Password Hint'/>
+            <div className="form-group">
               <div>
-                *<Field component='input' required placeholder='Carrier Name' type='text' name='carrier' />
-              </div>
-            </div>
-            <div className="form-field">
-              <div>
-                *<Field component='input' placeholder='First Name' type='text' name='firstname' />
-              </div>
-            </div>
-            <div className="form-field">
-              <div>
-                *<Field component='input' placeholder='Last Name' type='text' name='lastname' />
-              </div>
-            </div>
-            <div className="form-field">
-              <div>
-                *<Field component='input' placeholder='Email' type='email' name='email' />
-              </div>
-            </div>
-            <div className="form-field">
-              <div>
-                *<Field component='input' placeholder='Password' type='password' name='password' />
-              </div>
-            </div>
-            <div className="form-field">
-              <div>
-                *<Field component='input' placeholder='Re-Enter Password' type='password' name='password2' />
-              </div>
-            </div>
-            <div className="form-field">
-              <div>
-                *<Field component='input' placeholder='Password Hint' type='text' name='hint' />
-              </div>
-            </div>
-            <div className="form-field">
-              <div>
-                *<Field name="broker" required component='select'>
+                <Field className='form-control' name="broker" required component='select'>
                   <option>Select Broker</option>
                   <option value="test1">Test#1</option>
                   <option value="test2">Test#2</option>
-                  <option value="test3">Test#3</option>
                 </Field>
               </div>
             </div>
-            <div className="form-field">
-              <label>Please provide one of the following:</label>
+            <label>Please provide one of the following:</label>
+            <Field component={this.inputFields} type='text' name='MC' placeholder='MC#'/>
+            <label>or</label>
+            <Field component={this.inputFields} type='text' name='usdot' placeholder='USSDOT#'/>
+            <label>Are you a single owner/operator?</label>
+            <div className="form-group">
               <div>
-                *<Field component='input' placeholder='MC#' type='text' name='mc' />
+                <Field className='form-control' name="owneroperator" required component='select'>
+                  <option>Select</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </Field>
               </div>
             </div>
-            <div className="form-field">
-              <label>or</label>
-              <div>
-                *<Field component='input' placeholder='USDOT#' type='text' name='usdot' />
-              </div>
-            </div>
-            <div className="form-field">
-              <label>Are you a single owner/operator</label>
-              <div>
-                *<Field component='input' type="radio" name="ownerop" value="Yes" /> Yes<br />
-                *<Field component='input' type="radio" name="ownerop" value="No" /> No<br />
-              </div>
-            </div>
-            <button disabled={submitting}>NEXT</button>
+            <button className='btn btn-large' disabled={submitting}>NEXT</button>
           </form>
         </div>
       </div>
