@@ -1,20 +1,50 @@
 .container {
   padding-top: 20px;
 }
-td, th {
-  vertical-align: middle !important;
-  text-align: center !important;
+.banner {
+  height: 60px;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  background: white;
 }
-
-.input-group {
-  margin: 20px 0px;
+.buttonBack {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #007D90;
+  font-weight: 700
 }
-
-svg {
-  height: 150px;
+.nav {
+    display: flex;
+    justify-content: space-between;
 }
-
-td:first-of-type, td:first-of-type > div {
-  height: 200px;
-  width: 250px;
+.active {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 20px;
+    border-bottom: 4px solid #007D90;
+    color: #007D90;
+}
+li a {
+  padding: 0 20px;
+}
+ul {
+  border-bottom: 2px solid grey;
+}
+ul a {
+    text-decoration: none !important;
+    color: #949799;
+}
+.navcont {
+  width: 600px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+.main {
+  background-color: #F2F3F5;
 }

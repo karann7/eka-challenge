@@ -20,10 +20,13 @@ module.exports = {
   },
   resolve: {
     modules: [
-      path.join(__dirname, "app"),
+      path.join(__dirname, "src"),
       "node_modules"
     ],
 			alias: {
+        Reducers: 'reducers',
+        Banner: 'components/Banner.js',
+        Nav: 'components/Nav'
     },
     extensions: ['*', '.js', '.jsx']
   },

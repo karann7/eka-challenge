@@ -22,11 +22,10 @@
   "dependencies": {
     "axios": "^0.16.2",
     "babel-preset-stage-1": "^6.1.18",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-redux": "4.3.0",
-    "react-router": "^2.0.1",
-    "redux": "^3.0.4",
-    "redux-promise": "^0.5.3"
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.0.4"
   }
 }
