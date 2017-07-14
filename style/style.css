@@ -13,12 +13,14 @@
   top: 0;
 }
 .buttonBack {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
+  text-align: center;
   background-color: transparent;
-  border: none;
+  text-decoration: none;
   outline: none;
   color: #007D90;
+  font-size: 20px !important;
   font-weight: 700
 }
 .nav {
@@ -45,7 +47,7 @@ ul a {
 .navcont {
   width: 800px;
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 100px 0;
 }
 .main {
   background-color: #F2F3F5;
@@ -65,3 +67,9 @@ ul a {
   width: 600px;
   margin: 0 auto;
 }
+.welcome {
+  padding-top: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+

@@ -28,8 +28,8 @@ module.exports = {
         Reducers: 'reducers',
         Banner: 'components/Banner.js',
         Nav: 'components/Nav',
-        FormInput: 'components/common/FormInput',
-        RegisterForm: 'components/RegisterForm'
+        RegisterForm: 'containers/RegisterForm',
+        Home: 'components/Home'
     },
     extensions: ['*', '.js', '.jsx']
   },
