@@ -15,6 +15,8 @@ class RegisterForm extends Component {
     );
   }
   onSubmit(values) {
+    // create action creators
+    //values should be sent to DB and then the API
     console.log(values);
   }
   render() {
@@ -35,7 +37,7 @@ class RegisterForm extends Component {
             <div className="form-group">
               <div>
                 <Field className='form-control' name="broker" required component='select'>
-                  <option>Select Broker</option>
+                  <option value="select">Select Broker</option>
                   <option value="test1">Test#1</option>
                   <option value="test2">Test#2</option>
                 </Field>
@@ -49,13 +51,15 @@ class RegisterForm extends Component {
             <div className="form-group">
               <div>
                 <Field className='form-control' name="owneroperator" required component='select'>
-                  <option>Select</option>
+                  <option value="Select">Select</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </Field>
               </div>
             </div>
-              <button className='btn btn-large' disabled={submitting}>NEXT</button>
+              <div className="btnWrap">
+                <button className='btn nextBtn' disabled={submitting}>NEXT</button>
+              </div>
             </form>
         </div>
       </div>
@@ -64,7 +68,6 @@ class RegisterForm extends Component {
 }
 function validate(values) {
   const errors = {};
-  // probably better to use switch statement
   if (!values.carriername) {
     errors.carriername = 'Please enter a carrier';
   }
@@ -82,6 +85,16 @@ function validate(values) {
   }
   if (!values.passwordhint) {
     errors.passwordhint = 'Please enter a hint';
+  }
+  if (values.broker === 'select') {
+    errors.broker = 'Please select the broker';
+  }
+  if (!values.MC && !values.usdot) {
+    errors.MC = 'Please enter either a USDOT or MC #';
+    errors.usdot = 'Please enter either a USDOT or MC #';
+  }
+  if(values.owneroperator === 'Select') {
+    errors.owneroperator = 'Please select yes or no';
   }
   return errors;
 }
